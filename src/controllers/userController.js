@@ -33,7 +33,7 @@ const postHandler = async (req, res, next) => {
     try {
         const body = req.body;
         const id = await saveUser(body);
-        res.status(201).send(id);
+        res.status(201).json(id);
     } catch (error) {
         return next(error, req, res);
     }
